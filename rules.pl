@@ -10,8 +10,17 @@ poi(restaurant1) :- type(restaurant),
                     food(vegan),
                     food(vegetarian),
                     drink(red_wine),                    
-                    price(expensive).
+                    price(expensive),
+                    payment(cash),
+                    payment(credit_card).
                     % distance(X,Y, 10,20,R).
+poi(spa1) :- type(spa),
+             distance(in_hotel),
+             price(moderate),
+             drink(champagne),
+             drink(whiskey),
+             drink(vodka),
+             drink(bourbon).
 
 activity(drinking) :- drink(_).
 activity(eating) :- food(_).
