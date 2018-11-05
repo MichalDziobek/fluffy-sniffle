@@ -1,7 +1,9 @@
 % ?- X = 0, Y = 0.
 
 poi(cinema1) :- type(cinema),
-                distance(far).
+                distance(far),
+                payment(credit_card),
+                payment(cash).
 
 
 poi(restaurant1) :- type(restaurant),
@@ -20,7 +22,8 @@ poi(spa1) :- type(spa),
              drink(champagne),
              drink(whiskey),
              drink(vodka),
-             drink(bourbon).
+             drink(bourbon),
+             payment(cash).
 
 activity(drinking) :- drink(_).
 activity(eating) :- food(_).
