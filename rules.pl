@@ -1,41 +1,18 @@
-% ?- X = 0, Y = 0.
+has_attribute(AttributeName,Value,Place):- poi(Place,List), member(AttributeName,List),compound(AttributeName),AttributeName =.. [_Functor|ListWithinList],member(Values,ListWithinList),member(Value,Values).
 
-attribute(type, [cinema,spa,restaurant]).
-attribute(distance, [far,near,in_hotel]).
-attribute(food, [mexican,vegan,vegetarian]).
+poi(cinema1,[type([cinema]),distance([far]),payment([credit_card,cash]),food([cheese])]).
+poi(restaurant1,[type([restaurant]),distance([near]),payment([cash]),food([mexican,vegan,vegetarian])]).
+poi(spa1,[type([spa]),distance([in_hotel]),payment([cash]),drink([champagne,whiskey, vodka, bourbon])]).
 
-             
-poi(cinema1, 
-    [cinema],                   %type
-    [far],                      %distance
-    [credit_card,cash],         %payments
-    [cheese],
-    []                    
-).
 
-poi(restaurant1,
-    [restaurant],
-    [near],
-    [credit_card,cash],
-    [mexican,vegan,vegetarian],
-    []).
 
-poi(spa1,
-    [spa],
-    [in_hotel],
-    [cash],
-    [champagne,whiskey, vodka, bourbon]).
-
-drink(X, Y) :- poi(Y,_,_,_,_,T), contains(X,T).
-food(X, Y) :- poi(Y,_,_,_,T,_), contains(X,T).
-payment(X, Y) :- poi(Y,_,_,T,_,_), contains(X,T).
-distance(X, Y) :- poi(Y,_,T,_,_,_), contains(X,T).
-type(X, Y) :- poi(Y,T,_,_,_,_), contains(X,T).
-
+drink(X,Y) :- has_attribute(drink(_),X,Y).
+food(X,Y) :- has_attribute(food(_),X,Y).
+payment(X,Y) :- has_attribute(payment(_),X,Y).
+distance(X,Y) :- has_attribute(distance(_),X,Y).
+type(X,Y) :- has_attribute(type(_),X,Y).
 cheap_cheese(Y) :- food(cheese,Y), payment(cash,Y). 
 
-contains(Item,[Item|_]).  /* is my target item on the list */
-contains(Item,[_|Tail]) :- contains(Item,Tail).
 
 activity(drinking, Y) :- drink(_, Y).
 activity(eating, Y) :- food(_, Y).
