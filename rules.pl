@@ -44,6 +44,25 @@ poi(amarylis,
         drink([beer,wine])
     ]).
 
+poi(bagatela,
+    [
+        type([theater]),
+        distance([far]),
+        price([moderate]),
+        accessibility([wheelchair]),
+        payment([cash,card])
+    ]).
+
+poi(manggha,
+    [
+        type([museum]),
+        distance([far]),
+        price([cheap]),
+        accessibility([wheelchair]),
+        payment([cash,card]),
+        theme([japanese])
+    ]).
+
 poi(camelot,
     [
         type([cafe]),
@@ -76,11 +95,20 @@ poi(warsztat-cafe-restaurant,
     payment([cash,card]),
     ambiance([classical]),
     food([sandwich, pizza,italian,traditional]),
-    amenity([fireplace,wifi]),
+    amenity([wifi]),
     drink([coffee,beer,wine,vodka,rum,whisky,gin,tea,coffe,coctail]), 
     price([cheap])
 ]).
 
+poi(museum-galicja,
+[
+    type([museum]),
+    distance([not_far]),
+    payment([cash,card]),
+    ambiance([classical]),
+    price([moderate]),
+    theme([jewish, holocaust])
+]).
 
 drink(X,Y) :- has_attribute(drink(_),X,Y).
 food(X,Y) :- has_attribute(food(_),X,Y).
@@ -91,6 +119,7 @@ price(X,Y) :- has_attribute(price(_),X,Y).%cheap,moderate,expensive
 accessibility(X,Y) :- has_attribute(accessibility(_),X,Y).
 amenity(X,Y) :- has_attribute(amenity(_),X,Y).
 ambiance(X,Y) :- has_attribute(ambiance(_),X,Y).
+theme(X,Y) :- has_attribute(theme(_),X,Y).
 
 
 activity(drinking, Y) :- drink(_, Y).
