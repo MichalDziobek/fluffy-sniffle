@@ -110,6 +110,44 @@ poi(museum-galicja,
     theme([jewish, holocaust])
 ]).
 
+poi(locked-up,
+[
+    type([excape_room]),
+    distance([not_far]),
+    payment([cash,card]),
+    price([moderate]),
+    theme([mars,nuclear,oriental,acient_mystery])
+]).
+
+poi(etnographic-museum,
+[
+    type([museum]),
+    distance([not_far]),
+    payment([cash,card]),
+    price([cheap]),
+    theme([etnographic])
+]).
+poi(museum-municipal-engineering,
+[
+    type([museum]),
+    distance([not_far]),
+    payment([cash,card]),
+    price([cheap]),
+    theme([industrail])
+]).
+
+poi(warsztat-cafe-restaurant,
+[
+    type([cafe,restaurant]),
+    distance([near]),
+    payment([cash,card]),
+    ambiance([kids_friendly,cosy]),
+    food([sandwich, pizza,italian,traditional]),
+    amenity([wifi]),
+    drink([coffee,tea,lemonade,juice,rum,whisky,gin,tea,coffe,coctail]), 
+    price([cheap])
+]).
+
 drink(X,Y) :- has_attribute(drink(_),X,Y).
 food(X,Y) :- has_attribute(food(_),X,Y).
 payment(X,Y) :- has_attribute(payment(_),X,Y).
