@@ -148,7 +148,7 @@ poi(museum-municipal-engineering,
     theme([industrail])
 ]).
 
-poi(warsztat-cafe-restaurant,
+poi(dwa-okna-cafe,
 [
     type([cafe,restaurant]),
     distance([near]),
