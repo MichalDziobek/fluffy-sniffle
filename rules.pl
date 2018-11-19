@@ -44,6 +44,16 @@ poi(amarylis,
         drink([beer,wine])
     ]).
 
+poi(eco_plant,
+    [
+        type([spa]),
+        distance([far]),
+        price([expensive]),
+        payment([cash,card]),
+        ambiance([cosy]),
+        amenity([jakuzzi,sauna])
+    ]).
+
 poi(bagatela,
     [
         type([theater]),
@@ -55,11 +65,13 @@ poi(bagatela,
 
 poi(manggha,
     [
-        type([museum]),
+        type([museum,cafe]),
         distance([far]),
         price([cheap]),
         accessibility([wheelchair]),
         payment([cash,card]),
+        food(dessert,breakfast),
+        drink(tea),
         theme([japanese])
     ]).
 
