@@ -99,7 +99,7 @@ poi(m22,
         drink([beer,soda])
     ]).
 
-poi(warsztat-cafe-restaurant,
+poi(warsztat_cafe_restaurant,
 [
     type([cafe,restaurant]),
     distance([near]),
@@ -112,7 +112,7 @@ poi(warsztat-cafe-restaurant,
     price([cheap])
 ]).
 
-poi(museum-galicja,
+poi(museum_galicja,
 [
     type([museum]),
     distance([not_far]),
@@ -122,7 +122,7 @@ poi(museum-galicja,
     theme([jewish, holocaust])
 ]).
 
-poi(locked-up,
+poi(locked_up,
 [
     type([excape_room]),
     distance([not_far]),
@@ -131,7 +131,7 @@ poi(locked-up,
     theme([mars,nuclear,oriental,acient_mystery])
 ]).
 
-poi(etnographic-museum,
+poi(etnographic_museum,
 [
     type([museum]),
     distance([not_far]),
@@ -139,7 +139,7 @@ poi(etnographic-museum,
     price([cheap]),
     theme([etnographic])
 ]).
-poi(museum-municipal-engineering,
+poi(museum_municipal_engineering,
 [
     type([museum]),
     distance([not_far]),
@@ -148,7 +148,7 @@ poi(museum-municipal-engineering,
     theme([industrail])
 ]).
 
-poi(dwa-okna-cafe,
+poi(dwa_okna_cafe,
 [
     type([cafe,restaurant]),
     distance([near]),
