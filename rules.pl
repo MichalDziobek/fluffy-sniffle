@@ -8,7 +8,7 @@ poi(cinema1,
 [
     type([cinema]),
     distance([far]),
-    payment([credit_card, cash]),
+    payment([card, cash]),
     food([cheese]),
     price([cheap])
 ]).
